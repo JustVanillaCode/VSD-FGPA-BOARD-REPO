@@ -9,3 +9,6 @@ So, we start off by installing `Oracle VirtualBox` and then creating a new Opera
 This is how it should look like
 
 ![Image](https://github.com/user-attachments/assets/022d7a69-67a7-42e5-a6b8-92a4d148bafd)
+
+- [x] hi
+- [x] yo 
