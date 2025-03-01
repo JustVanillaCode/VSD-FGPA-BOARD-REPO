@@ -7,5 +7,4 @@ So, we start off by installing `Oracle VirtualBox` and then creating a new Opera
 >For this, we also must install the vsd virtual hard disk file.
 
 This is how it should look like
-
-https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/4896680e90715529a94b2fb6e714a22cd4504c7f/Screenshot%202025-03-01%20022610.png
+![Image](https://github.com/user-attachments/assets/022d7a69-67a7-42e5-a6b8-92a4d148bafd)
