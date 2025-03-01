@@ -5,8 +5,10 @@
 Here is all that is covered in this repository:
 - [x] Installation and settings
 - [x] Understanding the verilog code, pin placements, and the pcf file
+- [x] Programming the board
+- [x] Credits 
 
-# Getting Started :
+# Installation and Settings :
 So, we start off by installing `Oracle VirtualBox` and then creating a new Operating System. You can download it from [Here](https://www.virtualbox.org/wiki/Downloads)
 >[!NOTE]
 > We must also install the vsd virtual hard disk file for this.
@@ -15,9 +17,16 @@ This is how it should look like
 
 ![Image](https://github.com/user-attachments/assets/022d7a69-67a7-42e5-a6b8-92a4d148bafd)
 
+These are the settings that **SHOULD** be followed:
+
+![Image](https://github.com/user-attachments/assets/bd08553f-8216-44c6-8153-820a3d332124)
+
  This is how VirtualBox should look now:
 
  ![Image](https://github.com/user-attachments/assets/055349d1-4461-40f6-a710-7c26d7fe086d)
+
+ # Understanding Verilog, pin placements and the pcf file:
+ > You can access the verilog code [here.](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v)
 
 
  
