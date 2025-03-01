@@ -3,5 +3,5 @@
 
 # Getting Started :
 So, we start off by installing `Oracle VirtualBox` and then creating a new Operating System.
-[!TIP]
-For this, we also must install the vsd virtual hard disk file.
+>[!TIP]
+>For this, we also must install the vsd virtual hard disk file.
