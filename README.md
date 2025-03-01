@@ -10,5 +10,9 @@ This is how it should look like
 
 ![Image](https://github.com/user-attachments/assets/022d7a69-67a7-42e5-a6b8-92a4d148bafd)
 
-- [x] hi
-- [x] yo 
+ This is how VirtualBox should look now:
+
+ ![Image](https://github.com/user-attachments/assets/055349d1-4461-40f6-a710-7c26d7fe086d)
+
+ <-- ##This is how to connect the FGPA board and code it: -->
+ 
