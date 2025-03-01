@@ -57,10 +57,10 @@ In the start, we are declaring a module `top`; here are its inputs and output po
 
 ## This code configures an FPGA to:
 
-1. Generate an internal clock signal using an internal oscillator.
-2. Use this clock to drive a 28-bit counter.
-3. Output a toggling signal based on the counter for testing.
-4. Turn on the blue LED of an RGB LED using a dedicated driver primitive.
-5. Set the current limiting resistors for the rgb led.
-6. In essence, it's a basic setup that demonstrates how to use internal oscillators and LED drivers in an FPGA design.
+ 1. Generate an internal clock signal using an internal oscillator.
+ 2. Use this clock to drive a 28-bit counter.
+ 3. Output a toggling signal based on the counter for testing.
+ 4. Turn on the blue LED of an RGB LED using a dedicated driver primitive.
+ 5. Set the current limiting resistors for the rgb led.
+ 6. In essence, it's a basic setup that demonstrates how to use internal oscillators and LED drivers in an FPGA design.
 
