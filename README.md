@@ -29,7 +29,21 @@ These are the settings that **SHOULD** be followed:
  # Here is a detailed way on how to program the FGPA Board
 
 
+[CLICK HERE FOR DETAILED VIDEO](https://github.com/user-attachments/assets/b5a4fa6d-240e-46fb-a59e-a8429fde97f8)
+In this video, we start the Oracle VirtualBox and power up the VM, now we start the programming:
+- We open the terminal and use the command `cd`
+- Next, we open the file - `VSDSquadron_FM` using the command `cd VSDSquadron_FM`.
+- Now we open the sub division of this file `blink_led`, using the `cd blink_led` command.
+- This file already has all the components to light up the RGB led. So, now we use command `make build` and `sudo make flash` which are the final programs, if executed perfectly, then, the RGB led should light up.
+- This is how the expected output is like:
 
+  
+ ![Image](https://github.com/user-attachments/assets/7042545a-2f7c-462c-ae57-067b17416e2f)
+
+
+- This is the code in the terminal:
+
+  ![Image](https://github.com/user-attachments/assets/1e8c8043-26dc-4d33-b3c5-9ade8a0ed746)
 
  # Understanding Verilog, pin placements and the PCF file:
 >[!NOTE]
