@@ -17,6 +17,11 @@ This is how it should look like
 
 ![Image](https://github.com/user-attachments/assets/022d7a69-67a7-42e5-a6b8-92a4d148bafd)
 
+
+
+> MY LED WAS CAPTURED ON THE RED TERMINAL, THE LED SHOULD BE FLASHING RGB.
+
+
 These are the settings that **SHOULD** be followed:
 
 ![Image](https://github.com/user-attachments/assets/bd08553f-8216-44c6-8153-820a3d332124)
