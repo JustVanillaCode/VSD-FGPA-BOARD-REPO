@@ -26,6 +26,11 @@ These are the settings that **SHOULD** be followed:
  ![Image](https://github.com/user-attachments/assets/055349d1-4461-40f6-a710-7c26d7fe086d)
 
 
+ # Here is a detailed way on how to program the FGPA Board
+
+
+
+
  # Understanding Verilog, pin placements and the PCF file:
 >[!NOTE]
 > You can access the verilog code [here.](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v)
@@ -64,3 +69,4 @@ In the start, we are declaring a module `top`; here are its inputs and output po
  5. Set the current limiting resistors for the rgb led.
  6. In essence, it's a basic setup that demonstrates how to use internal oscillators and LED drivers in an FPGA design.
 
+## Understanding the PCF
