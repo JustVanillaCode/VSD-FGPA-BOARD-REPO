@@ -89,3 +89,24 @@ In the start, we are declaring a module `top`; here are its inputs and output po
  6. In essence, it's a basic setup that demonstrates how to use internal oscillators and LED drivers in an FPGA design.
 
 ## Understanding the PCF
+
+### Here is the PCF code :
+set_io  led_red	39
+set_io  led_blue 40
+set_io  led_green 41
+set_io  hw_clk 20
+set_io  testwire 17
+
+### Explanation :
+These lines are instructions for a chip (like an FPGA) that tell it how its internal signals are connected to its physical pins. Think of it like a label on a wire:
+
+`set_io led_red 39`: This line means "The signal called 'led_red' (which controls a red LED) is connected to pin number 39." So, when the chip wants to turn on the red LED, it sends a signal to pin 39.
+
+`set_io led_blue 40`: This means "The signal called 'led_blue' (which controls a blue LED) is connected to pin number 40."
+`set_io led_green 41`: This means "The signal called 'led_green' (which controls a green LED) is connected to pin number 41."
+`set_io hw_clk 20`: This means "The hardware clock signal (which provides timing) is connected to pin number 20." The clock is the heartbeat of the chip, and this line tells it where to find that heartbeat.
+`set_io testwire 17`: This means "A general-purpose signal called 'testwire' (used for testing) is connected to pin number 17."
+Essentially, these lines are creating a map that the chip uses to know where to send and receive signals. Without this map, the chip wouldn't know which pins to use, and your circuit wouldn't work. It's like telling a robot which wires to connect to which parts.
+
+
+# THIS WAS ALL FOR TASK 1, THANK YOU.
