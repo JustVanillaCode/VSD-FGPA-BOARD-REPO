@@ -114,7 +114,7 @@ Essentially, these lines are creating a map that the chip uses to know where to 
 
 # TASK 2 
 
-# UART AND LOOPBACK
+## UART AND LOOPBACK
 
 Now, in the step 1, we have to access and study the given code from [VSDSquadron_FM, UART](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/uart_loopback/uart_trx.v) repo. The code is as follows: 
 
@@ -194,7 +194,7 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
     
 `endmodule`
 
-## Let us break it down step by step:
+### Let us break it down step by step:
 - At the top we have `module`. This declares the modules and the ports. 
 
  `module uart_tx_8n1(...)` defines a module, namley the `uart_tx_8n1`. It does a very important job,
