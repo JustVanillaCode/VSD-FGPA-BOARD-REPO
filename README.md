@@ -213,8 +213,23 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
 
 - `senndata` : This is a signal that is used to trigger the transmission of `txbyte`
 
-- `txdone` : This signifies and indicates that the trasfer by `txbyte` is done.
+- `txdone` : This signifies and indicates that the transfer by `txbyte` is done.
 
 - `tx` : This is the output signal which carries the serial data.
 
-  
+
+
+ ### State Variables and Parameters : 
+
+ We start off with the most obvious question,
+ _What ARE parameters???_
+ - Parimeters define the different states of finite state machines (FSM), which is used to control the transmission process.
+   - Now we have our first parameter : `STATE_IDLE`, this is waiting for the `senndata` signal.
+   - The module `STATE_STARTTX` sends the start bit.
+   - The `STATE_TXING` module is responsible for transmitting the data bits.
+   - The module `STATE_TXDONE` signifies that the module has completed transmitting.
+     
+ - State Variables
+   -
+ 
+ 
