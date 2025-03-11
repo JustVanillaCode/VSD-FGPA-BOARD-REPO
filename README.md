@@ -195,16 +195,26 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
 `endmodule`
 
 ## Let us break it down step by step:
-At the top we have `module`. This declares the modules and the ports. 
-`module uart_tx_8n1(...)` defines a module, namley the `uart_tx_8n1`. It does a very important job,
-- Serial Data Transmission: It takes an 8-bit parallel data byte (txbyte) and converts it into a serial stream of bits on the tx output.
-- UART Protocol Implementation: It implements the 8N1 UART protocol, which defines the format of the serial data:
-  - Start bit (low)
-  - 8 data bits (least significant bit first)
-  - Stop bit (high)
-- Synchronization: It uses a clock signal (`clk`) to synchronize the transmission process.
-- Transmission Control: It uses the `senddata` input to trigger the transmission and the `txdone` output to indicate when the transmission is complete.
-- State Machine: It uses a state machine to manage the different stages of the transmission process (idle, start bit, data bits, stop bit).
+- At the top we have `module`. This declares the modules and the ports. 
 
+ `module uart_tx_8n1(...)` defines a module, namley the `uart_tx_8n1`. It does a very important job,
+ - Serial Data Transmission: It takes an 8-bit parallel data byte (txbyte) and converts it into a serial stream of bits on the tx output.
+ - UART Protocol Implementation: It implements the 8N1 UART protocol, which defines the format of the serial data:
+   - Start bit (low)
+   - 8 data bits (least significant bit first)
+   - Stop bit (high)
+ - Synchronization: It uses a clock signal (`clk`) to synchronize the transmission process.
+ - Transmission Control: It uses the `senddata` input to trigger the transmission and the `txdone` output to indicate when the transmission is complete.
+ - State Machine: It uses a state machine to manage the different stages of the transmission process (idle, start bit, data bits, stop bit).
 
+- `clk` : This is a clock input which synchronizes the module's (we defined earlier) operations. 
 
+- `txbyte` : This is the *8 bit* data that is to be transmitted.
+
+- `senndata` : This is a signal that is used to trigger the transmission of `txbyte`
+
+- `txdone` : This signifies and indicates that the trasfer by `txbyte` is done.
+
+- `tx` : This is the output signal which carries the serial data.
+
+  
