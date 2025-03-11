@@ -110,3 +110,101 @@ Essentially, these lines are creating a map that the chip uses to know where to 
 
 
 # THIS WAS ALL FOR TASK 1, THANK YOU.
+
+
+# TASK 2 
+
+# UART AND LOOPBACK
+
+Now, in the step 1, we have to access and study the given code from [VSDSquadron_FM, UART](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/uart_loopback/uart_trx.v) repo. The code is as follows: 
+
+
+`// 8N1 UART Module, transmit only`
+
+`module uart_tx_8n1 (
+    clk,        // input clock
+    txbyte,     // outgoing byte
+    senddata,   // trigger tx
+    txdone,     // outgoing byte sent
+    tx,         // tx wire
+    );`
+
+    /* Inputs */
+    input clk;
+    input[7:0] txbyte;
+    input senddata;
+
+    /* Outputs */
+    output txdone;
+    output tx;
+
+    /* Parameters */
+    parameter STATE_IDLE=8'd0;
+    parameter STATE_STARTTX=8'd1;
+    parameter STATE_TXING=8'd2;
+    parameter STATE_TXDONE=8'd3;
+
+    /* State variables */
+    reg[7:0] state=8'b0;
+    reg[7:0] buf_tx=8'b0;
+    reg[7:0] bits_sent=8'b0;
+    reg txbit=1'b1;
+    reg txdone=1'b0;
+
+    /* Wiring */
+    assign tx=txbit;
+
+    /* always */
+    always @ (posedge clk) begin
+        // start sending?
+        if (senddata == 1 && state == STATE_IDLE) begin
+            state <= STATE_STARTTX;
+            buf_tx <= txbyte;
+            txdone <= 1'b0;
+        end else if (state == STATE_IDLE) begin
+            // idle at high
+            txbit <= 1'b1;
+            txdone <= 1'b0;
+        end
+
+        // send start bit (low)
+        if (state == STATE_STARTTX) begin
+            txbit <= 1'b0;
+            state <= STATE_TXING;
+        end
+        // clock data out
+        if (state == STATE_TXING && bits_sent < 8'd8) begin
+            txbit <= buf_tx[0];
+            buf_tx <= buf_tx>>1;
+            bits_sent = bits_sent + 1;
+        end else if (state == STATE_TXING) begin
+            // send stop bit (high)
+            txbit <= 1'b1;
+            bits_sent <= 8'b0;
+            state <= STATE_TXDONE;
+        end
+
+        // tx done
+        if (state == STATE_TXDONE) begin
+            txdone <= 1'b1;
+            state <= STATE_IDLE;
+        end
+
+    end
+    
+`endmodule`
+
+## Let us break it down step by step:
+At the top we have `module`. This declares the modules and the ports. 
+`module uart_tx_8n1(...)` defines a module, namley the `uart_tx_8n1`. It does a very important job,
+- Serial Data Transmission: It takes an 8-bit parallel data byte (txbyte) and converts it into a serial stream of bits on the tx output.
+- UART Protocol Implementation: It implements the 8N1 UART protocol, which defines the format of the serial data:
+  - Start bit (low)
+  - 8 data bits (least significant bit first)
+  - Stop bit (high)
+- Synchronization: It uses a clock signal (`clk`) to synchronize the transmission process.
+- Transmission Control: It uses the `senddata` input to trigger the transmission and the `txdone` output to indicate when the transmission is complete.
+- State Machine: It uses a state machine to manage the different stages of the transmission process (idle, start bit, data bits, stop bit).
+
+
+
