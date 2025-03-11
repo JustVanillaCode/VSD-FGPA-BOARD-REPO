@@ -22,7 +22,7 @@ This is how it should look like
 > MY LED WAS CAPTURED ON THE RED TERMINAL, THE LED SHOULD BE FLASHING RGB.
 
 
-These are the settings that **SHOULD** be followed:
+These are the settings that SHOULD be followed:
 
 ![Image](https://github.com/user-attachments/assets/bd08553f-8216-44c6-8153-820a3d332124)
 
@@ -129,32 +129,32 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
     tx,         // tx wire
     );`
 
-    /* Inputs */
+    /  Inputs  /
     input clk;
     input[7:0] txbyte;
     input senddata;
 
-    /* Outputs */
+    /  Outputs  /
     output txdone;
     output tx;
 
-    /* Parameters */
+    /  Parameters  /
     parameter STATE_IDLE=8'd0;
     parameter STATE_STARTTX=8'd1;
     parameter STATE_TXING=8'd2;
     parameter STATE_TXDONE=8'd3;
 
-    /* State variables */
+    /  State variables  /
     reg[7:0] state=8'b0;
     reg[7:0] buf_tx=8'b0;
     reg[7:0] bits_sent=8'b0;
     reg txbit=1'b1;
     reg txdone=1'b0;
 
-    /* Wiring */
+    /  Wiring  /
     assign tx=txbit;
 
-    /* always */
+    /  always  /
     always @ (posedge clk) begin
         // start sending?
         if (senddata == 1 && state == STATE_IDLE) begin
@@ -209,7 +209,7 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
 
 - `clk` : This is a clock input which synchronizes the module's (we defined earlier) operations. 
 
-- `txbyte` : This is the *8 bit* data that is to be transmitted.
+- `txbyte` : This is the  8 bit  data that is to be transmitted.
 
 - `senndata` : This is a signal that is used to trigger the transmission of `txbyte`
 
@@ -221,7 +221,7 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
 
  ### State Variables and Parameters : 
 
- We start off with the most obvious question,
+ We start with the most obvious question,
  _What ARE parameters???_
  - Parimeters define the different states of finite state machines (FSM), which is used to control the transmission process.
    - Now we have our first parameter : `STATE_IDLE`, this is waiting for the `senndata` signal.
@@ -230,6 +230,42 @@ Now, in the step 1, we have to access and study the given code from [VSDSquadron
    - The module `STATE_TXDONE` signifies that the module has completed transmitting.
      
  - State Variables
-   -
- 
- 
+   - `state` : This stores the current state of the  FSM .
+   - `buf_tx` : As the name suggests, this is a buffer that holds the module `txbyte` data during transmission.
+   - `bits_sent` : Just like the name, this counts the amount of bits that were sent (transmitted)
+   - `txdone` : This is used for storing the status of completion of transmission. 
+
+
+ ### WIRING
+ There is not much to wiring, but the code, 
+`assign tx=txbit;` connects the internal `txbit` to the output `tx`.
+
+
+### UART Transmission Flow (Clock-Triggered)
+
+- Idle Detection & Initiation: 
+
+ When the clock signal goes high, the system checks if a new data transmission is requested by looking at the `senddata` input. If `senddata` is active (high) and the UART is currently in the `STATE_IDLE`, it means we're ready to start a new transmission. The module then switches to `STATE_STARTTX`, loads the data byte (referred to as `txbyte`) into the transmission buffer (`buf_tx`), and sets the `txdone` flag to low—this tells us that the transmission process has just begun.
+
+- Start Bit Transmission:  
+
+As soon as we're in the `STATE_STARTTX`, the module sets the `txbit` output to low, generating a start bit. This is essential as it indicates to the receiving device that a new transmission is about to take place. The UART then shifts into `STATE_TXING` to start sending the actual data.
+
+- Data Bit Serialization:  
+
+ Now in the `STATE_TXING`, the module begins sending the data bits that were loaded into `buf_tx`. It starts with the least significant bit (LSB) and sends this out through the `txbit` output. After transmitting each bit, the module shifts `buf_tx` to the right to get ready for the next bit. There's a `bits_sent` counter that keeps track of how many bits have been sent. This process continues until all 8 data bits are out there.
+
+- Stop Bit Transmission:  
+
+ After all 8 data bits have been transmitted, the next step is to send out the stop bit. While still in the `STATE_TXING`, once the 8th bit is sent, the `txbit` output is set high to signal that the data frame has ended. The `bits_sent` counter is reset, and we transition to the `STATE_TXDONE`.
+
+- Transmission Completion Signal:  
+
+ In `STATE_TXDONE`, the module sets the `txdone` output to high. This is an important signal that lets any connected devices know that the transmission has been completed successfully.
+
+- Return to Idle State:  
+
+Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a new `senddata` signal. This setup allows for continuous data transfers, making the process efficient and smooth for future transmissions.
+
+
+
