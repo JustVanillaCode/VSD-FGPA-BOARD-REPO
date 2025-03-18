@@ -274,7 +274,16 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
 
  ![Image](https://github.com/user-attachments/assets/cedb5a7e-1556-4b7a-ae6d-b59cd9bcaa22)
 
+>[!NOTE]
+>I made the digram in *CANVA*, you can access it [here](https://www.canva.com/design/DAGiEBV-yvU/XAYJV6tATJ-uTedK6lcQpA/edit?ui=eyJIIjp7IkEiOnRydWV9fQ).
+
 
  ### Here is the detailed circuit diagram showing connections between the FPGA and any peripheral devices used - 
+
+ ![Image](https://github.com/user-attachments/assets/2ae47bf7-0c97-4417-a678-933195863348)
+
+
+ This too was made in *Canva*, the link is [here](https://www.canva.com/design/DAGiFdc4tgk/7zvOy1_zbCe8kE50TtqO4g/edit?ui=eyJIIjp7IkEiOnRydWV9fQ).
+
 
  
