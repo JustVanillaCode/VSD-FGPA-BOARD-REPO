@@ -269,4 +269,12 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
 
 ## Desin Documentation 
 
+ ### Here, I have created a block digram about the UART loopback structure - 
 
+
+ ![Image](https://github.com/user-attachments/assets/cedb5a7e-1556-4b7a-ae6d-b59cd9bcaa22)
+
+
+ ### Here is the detailed circuit diagram showing connections between the FPGA and any peripheral devices used - 
+
+ 
