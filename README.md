@@ -19,7 +19,7 @@ This is how it should look like
 
 
 
-> MY LED WAS CAPTURED ON THE RED TERMINAL, THE LED SHOULD BE FLASHING RGB.
+
 
 
 These are the settings that SHOULD be followed:
@@ -46,6 +46,8 @@ In this video, we start the Oracle VirtualBox and power up the VM, now we start 
  ![Image](https://github.com/user-attachments/assets/7042545a-2f7c-462c-ae57-067b17416e2f)
 
 
+
+> MY LED WAS CAPTURED ON THE RED TERMINAL, THE LED SHOULD BE FLASHING RGB.
 - This is the code in the terminal:
 
   ![Image](https://github.com/user-attachments/assets/1e8c8043-26dc-4d33-b3c5-9ade8a0ed746)
