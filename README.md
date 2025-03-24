@@ -295,3 +295,58 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
   
 >[!NOTE]
 > All these files MUST be under a folder, I have named it `task_2_uart_loopback`
+
+Here is the image
+
+
+![Image](https://github.com/user-attachments/assets/3c5cadea-cb93-4b2d-a3a6-c1d70d3a2b1a)
+
+![image](https://github.com/user-attachments/assets/85d091fa-8e5e-40e0-9369-99a716f4884d)
+
+- Now we should open the terminal and enter these commands- 
+
+> cd
+>
+> cd VSDSquadron_FM
+>
+> cd task_2_uart
+
+Now, the screen should look like this -
+
+
+![image](https://github.com/user-attachments/assets/fc3d7db1-0163-4436-988e-94d9f5ced026)
+
+
+
+Next, we have to enter the following commands - 
+
+>make build
+>
+>sudo make flash
+
+
+Now, the screen should look like - 
+
+
+![image](https://github.com/user-attachments/assets/cbdba4b8-03e6-462d-8560-b4b6badd3b54)
+
+
+That was all! We have successfully transmitted the code!
+
+>[!NOTE]
+>Your board MUST be connected during the process, the `lsusb` command shows that the FPGA is connected. 
+
+
+### Testing and Verification:
+
+- We will use the software called `DOCKLIGHT` to test the board, it can be downloaded from [here](https://docklight.de/downloads/?utm_source=chatgpt.com).
+- Next, we should verify that the original system NOT THE VM is connected to the correct communication port. In my case, it was `COM4`.
+- Now, we should apply it, this is the expected result -
+
+  ![image](https://github.com/user-attachments/assets/b48abdfc-a545-4248-8538-61b7e091e837)
+
+
+We have completed the verification!
+
+
+
