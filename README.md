@@ -6,7 +6,6 @@ Here is all that is covered in this repository:
 - [x] Installation and settings
 - [x] Understanding the verilog code, pin placements, and the pcf file
 - [x] Programming the board
-- [x] Credits 
 
 # Installation and Settings :
 So, we start off by installing `Oracle VirtualBox` and then creating a new Operating System. You can download it from [Here](https://www.virtualbox.org/wiki/Downloads)
@@ -288,4 +287,8 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
  This too was made in *Canva*, the link is [here](https://www.canva.com/design/DAGiFdc4tgk/7zvOy1_zbCe8kE50TtqO4g/edit?ui=eyJIIjp7IkEiOnRydWV9fQ).
 
 
- 
+
+## Implementation:
+### Transmitting code to the FPGA board-
+- First, we have to open the `ORACLE VIRTUAL BOX`, after the VM is powered up, we can open the `VSDSquadron_FM` folder.
+- Next we should create the following files in the folder - `[Makefile]()` `` `` ``
