@@ -291,7 +291,7 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
 ## Implementation:
 ### Transmitting code to the FPGA board-
 - First, we have to open the `ORACLE VIRTUAL BOX`, after the VM is powered up, we can open the `VSDSquadron_FM` folder.
-- Next, we should create the following files in the folder - [`Makefile`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/Makefile), [`VSDSquadron_FM.pcf`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/VSDSquadronFM.pcf), [`top.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/top.v) and  [`uart_trx.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/uart_trx.v).
+- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/Makefile), [`VSDSquadron_FM.pcf`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/VSDSquadronFM.pcf), [`top.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/top.v) and  [`uart_trx.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/uart_trx.v).
   
 >[!NOTE]
-> All these files MUST be under a folder, i have named it `task_2_uart_loopback`
+> All these files MUST be under a folder, I have named it `task_2_uart_loopback`
