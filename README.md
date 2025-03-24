@@ -348,5 +348,32 @@ That was all! We have successfully transmitted the code!
 
 We have completed the verification!
 
+### Documentation - 
+#### Block and Circuit Diagrams -
+
+ ![Image](https://github.com/user-attachments/assets/cedb5a7e-1556-4b7a-ae6d-b59cd9bcaa22)
+
+ ![Image](https://github.com/user-attachments/assets/2ae47bf7-0c97-4417-a678-933195863348)
+
+
+#### Testing results 
+
+![image](https://github.com/user-attachments/assets/a124e4f2-5185-448c-aeaa-b3b6b9eae9f9)
+
+#### Here is the video demonstrating the UART's Functionality - 
+
+[Click Here for the video](https://github.com/user-attachments/assets/aacad27f-db12-4845-860f-27d0463fb53b)
+
+## THAT WAS ALL FOR TASK 2, THANK YOU!!
+
+
+# TASK 3 
+### Studying the existing code from the VSDSquadron_FM repo -
+>[!NOTE]
+>The repository can be accessed [here](https://github.com/thesourcerer8/VSDSquadron_FM/tree/main/uart_tx).
+
+
+
+
 
 
