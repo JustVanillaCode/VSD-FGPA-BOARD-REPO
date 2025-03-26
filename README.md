@@ -1,5 +1,5 @@
 
-> I am creating this repository for the fgpa board provided by `VSDIAT`. This repository covers all the steps, tasks and the installation process for the fgpa board.
+> I am creating this repository for the FPGA board provided by `VSDIAT`. This repository covers all the steps, tasks and the installation process for the FPGA board.
 > This all is based upon the steps mentioned in the datasheet, you can access the datasheet [here.](https://www.vlsisystemdesign.com/wp-content/uploads/2025/01/VSDSquadronFMDatasheet.pdf)
 
 Here is all that is covered in this repository:
@@ -30,7 +30,7 @@ These are the settings that SHOULD be followed:
  ![Image](https://github.com/user-attachments/assets/055349d1-4461-40f6-a710-7c26d7fe086d)
 
 
- # Here is a detailed way on how to program the FGPA Board
+ # Here is a detailed way on how to program the FPGA Board
 
 
 [CLICK HERE FOR DETAILED VIDEO](https://github.com/user-attachments/assets/b5a4fa6d-240e-46fb-a59e-a8429fde97f8)
@@ -291,7 +291,7 @@ Finally, the system goes back to the `STATE_IDLE`, getting ready to receive a ne
 ## Implementation:
 ### Transmitting code to the FPGA board-
 - First, we have to open the `ORACLE VIRTUAL BOX`, after the VM is powered up, we can open the `VSDSquadron_FM` folder.
-- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/Makefile), [`VSDSquadron_FM.pcf`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/VSDSquadronFM.pcf), [`top.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/top.v) and  [`uart_trx.v`](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/blob/main/uart_trx.v).
+- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/Makefile), [`VSDSquadron_FM.pcf`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/VSDSquadronFM.pcf), [`top.v`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/top.v) and  [`uart_trx.v`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/uart_trx.v).
   
 >[!NOTE]
 > All these files MUST be under a folder, I have named it `task_2_uart_loopback`
@@ -426,13 +426,68 @@ The module has defiened *6* ports, they are as follows-
 ### IMPLEMENTATION
 ###### STEPS TO TRANSMIT THE CODE
 - First, we have to open the `ORACLE VIRTUAL BOX`, after the VM is powered up, we can open the `VSDSquadron_FM` folder.
-- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile`](), [`VSDSquadron_FM.pcf`](), [`top.v`]() and  [`uart_trx.v`]().
+- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile2`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/Makefile2), [`VSDSquadron_FM.pcf2`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/VSDSquadronFM.pcf2), [`top.v2`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/top.v2) and  [`uart_trx.v2`](https://github.com/JustVanillaCode/VSD-FPGA-BOARD-REPO/blob/main/uart_trx.v2).
   
 >[!NOTE]
-> All these files MUST be under a folder, I have named it `task_2_uart_loopback`
+> All these files MUST be under a folder, I have named it `task_3_uart_transmission`
 
 Here is the image
 
+![image](https://github.com/user-attachments/assets/55b6f99f-c82d-4ca8-988d-56d17702091f)
 
+
+![image](https://github.com/user-attachments/assets/5d4aaccb-02d5-45b5-ae86-69806cf398a3)
+
+Next we can open the terminal - 
+![image](https://github.com/user-attachments/assets/89068577-64d5-49e5-aa12-e04431462e02)
+
+Now we should type the following commands -
+
+>cd
+>
+>cd VSDSquadron_FM
+>
+>cd task_3_uart_transmission
+>
+>make build
+>
+>sudo make flash
+
+IF YOU HAVE DONE AA THIS SUCCESFULLY, YOU HAVE TRANSMITTED THE CODE!!
+>[!NOTE]
+> Make sure your FPGA is connected during this process.
+
+Here is the video of the output - 
+[Click here for the video](https://github.com/user-attachments/assets/55e83148-6e65-4067-8c55-94fe663959a0)
+
+
+
+### TESTING AND VERIFICATION
+- So, first we have to install a software called puTTY.
+- Once that is done, we should connect the board and specifiy the port that the FPGA is connected to. In my case it was COM4.
+- You can install puTTY from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+- Then, check that a series of `D`s are generated and the RGB LED is blinking switching between red, green and blue.
+  Like this -
+  [Click here for the video](https://github.com/user-attachments/assets/09d8b518-6fbc-4a5c-b7b6-25396f63ad55)
+
+## Task 5 and 6: Real-Time Sensor Data Acquisition and Transmission System
+ This theme focuses on creating systems that interface with different sensors to gather data, process it with an FPGA, and send the data to other devices via UART and other communication protocols.  The following actions must be taken to accomplish this:
+
+ Do in-depth research on the selected topic-
+ - Create a thorough project proposal that outlines the functionality, necessary parts, and execution plan of the system.
+ - Develop, test, and validate the system to carry out the project strategy. Make a little film showcasing the project's functionality and thoroughly document the 
+   entire procedure. 
+
+Here is my result - 
+![image](https://github.com/user-attachments/assets/f7a73fb3-e186-4ed5-8047-0bf75a8da0de)
+
+[Here](https://github.com/JustVanillaCode/VSD-FGPA-BOARD-REPO/tree/main/task%206) is the code
+
+
+
+
+
+# THANK YOU THIS IS THE END OF THIS REPOSITERY....
+                                 --------------------------------------------------------------------------------------   
 
 
