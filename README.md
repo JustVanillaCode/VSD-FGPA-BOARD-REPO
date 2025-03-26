@@ -6,6 +6,7 @@ Here is all that is covered in this repository:
 - [x] Installation and settings
 - [x] Understanding the verilog code, pin placements, and the pcf file
 - [x] Programming the board
+- [x] Implementing the codes 
 
 # Installation and Settings :
 So, we start off by installing `Oracle VirtualBox` and then creating a new Operating System. You can download it from [Here](https://www.virtualbox.org/wiki/Downloads)
@@ -488,6 +489,5 @@ Here is my result -
 
 
 # THANK YOU THIS IS THE END OF THIS REPOSITERY....
-                                 --------------------------------------------------------------------------------------   
-
+                                            
 
