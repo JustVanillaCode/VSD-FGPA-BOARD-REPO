@@ -1,4 +1,4 @@
-# VSD-FGPA-BOARD-REPO BY ATHRV SHARMA
+![image](https://github.com/user-attachments/assets/6fceb301-425c-460f-bc2f-b56802c5c893)# VSD-FGPA-BOARD-REPO BY ATHRV SHARMA
 > I am creating this repository for the fgpa board provided by `VSDIAT`. This repository covers all the steps, tasks and the installation process for the fgpa board.
 > This all is based upon the steps mentioned in the datasheet, you can access the datasheet [here.](https://www.vlsisystemdesign.com/wp-content/uploads/2025/01/VSDSquadronFMDatasheet.pdf)
 
@@ -373,6 +373,65 @@ We have completed the verification!
 >The repository can be accessed [here](https://github.com/thesourcerer8/VSDSquadron_FM/tree/main/uart_tx).
 
 
+UART (Universal Asynchronous Receiver-Transmitter) is a hardware communication protocol designed for serial communication between devices. It features two primary data lines: the TX (Transmit) pin and the RX (Receive) pin. A UART loopback mechanism serves as a testing or diagnostic mode in which data sent to the TX pin is directly returned to the RX pin of the same module. This setup enables the system to confirm the proper functioning of the TX and RX lines without requiring an external device.
+
+###### Anylasing the Port:
+The module has defiened *6* ports, they are as follows-
+ - 3 LED OUTPUTS :
+   - RED LED `led_red`
+   - BLUE LED `led_blue`
+   - GREEN LED `led_green`
+ - UART RECIVE AND TRANSMIT PINS :
+   - UART TRANSMIT `uarttx`
+   - UART RECIEVE `uartrx`
+ - System Clock Input - `hw_clk`
+
+###### Analyzing the Internal Components:
+
+1. State - IDLE `STATE_IDLE`
+   - Maintains TX line high (idle condition)
+   - Waits for senddata trigger
+   - Resets txdone flag
+2. STARTTX State `STATE_STARTTX`
+   - Transmits the start bit (logic - low)
+   - Loads transmission buffer with txbyte
+   - Loads transmission buffer with txbyte
+3. TXING State `STATE_TXING`
+   - Sends data bits sequentially
+   - Shifts buffer towards right for next bit
+   - Counts transmitted bits (0-7)
+   - Continues until all 8 bits sent
+4. TXDONE State `(STATE_TXDONE`
+   - Responsible to send the stop bit (logic - high)
+   - Sets `txdone` flag
+   - Returns to the IDLE state
+
+### DIGRAMS 
+- Block Digram:
+
+  
+  ![image](https://github.com/user-attachments/assets/51568948-2081-4c2c-ad5b-d2b11dbd5d5f)
+
+> THIS WAS MADE IN *CANVA* YOU CAN ACCESS IT [HERE](https://www.canva.com/design/DAGiEZw_tPg/NaJUBchfQIc2KGg6cRNmuQ/edit).
+
+- Circuit Digram
+
+  ![image](https://github.com/user-attachments/assets/4f0978e9-0a0e-4446-94f7-f81920602120)
+
+> THIS WAS MADE IN *CANVA* YOU CAN ACCESS IT [HERE](https://www.canva.com/design/DAGO1Je0PvQ/CGPY_S5mOszF8-sSAAsMiA/edit?utm_content=DAGO1Je0PvQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+
+
+
+
+### IMPLEMENTATION
+###### STEPS TO TRANSMIT THE CODE
+- First, we have to open the `ORACLE VIRTUAL BOX`, after the VM is powered up, we can open the `VSDSquadron_FM` folder.
+- Next, we should create the following files in a subfolder inside the `VSDSquadron_FM` - [`Makefile`](), [`VSDSquadron_FM.pcf`](), [`top.v`]() and  [`uart_trx.v`]().
+  
+>[!NOTE]
+> All these files MUST be under a folder, I have named it `task_2_uart_loopback`
+
+Here is the image
 
 
 
