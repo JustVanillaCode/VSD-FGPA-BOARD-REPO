@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/6fceb301-425c-460f-bc2f-b56802c5c893)# VSD-FGPA-BOARD-REPO BY ATHRV SHARMA
+
 > I am creating this repository for the fgpa board provided by `VSDIAT`. This repository covers all the steps, tasks and the installation process for the fgpa board.
 > This all is based upon the steps mentioned in the datasheet, you can access the datasheet [here.](https://www.vlsisystemdesign.com/wp-content/uploads/2025/01/VSDSquadronFMDatasheet.pdf)
 
